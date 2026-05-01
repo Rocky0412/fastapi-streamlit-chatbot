@@ -33,7 +33,7 @@ async def read_book(book_title: str):
 
 #Example of Query Parameter
 
-@app.get("/books/")
+@app.get("/books/",status_code=status.HTTP_200_OK)
 def getbookbyCatagory(title:str,catagory:str):
     for book in BOOKS:
         if book.get("catagory").casefold==catagory.casefold and book.get("title").casefold==title.casefold:
